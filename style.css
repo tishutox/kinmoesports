@@ -206,14 +206,15 @@ main p{
     position: fixed;
     top: unset;
     bottom: 0;
+    z-index: 1000; /* keep above footer */
 
     > ul{
       padding: 0;
       display: grid;
-      grid-auto-columns: 60px;
-      grid-auto-flow: column;
+      grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
       align-items: center;
-      overflow-x: scroll;
+      justify-items: center;
+      overflow-x: hidden;
     }
     ul li{
       height: 100%;
@@ -228,6 +229,12 @@ main p{
 
     ul li span, ul li:first-child, .dropdown-btn svg:last-child, .dropdown-btn i:last-child{
       display: none;
+    }
+
+    /* Prevent collapsed width on mobile when sidebar has .close */
+    &.close{
+      width: 100%;
+      padding: 0;
     }
 
     ul li .sub-menu.show{
@@ -255,5 +262,68 @@ main p{
         justify-content: center;
       }
     }
+  }
+}
+
+/* Footer */
+.site-footer{
+  background: #000;
+  color: #fff;
+}
+.site-footer{
+  background: #000;
+  color: #fff;
+  /* Ensure footer starts after the sidebar on desktop */
+  grid-column: 2;
+}
+.site-footer a{
+  color: #fff;
+  text-decoration: none;
+}
+.site-footer a:hover{
+  color: var(--accent-clr);
+}
+.footer-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: min(30px, 7%);
+}
+.footer-social{
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+.footer-social i{
+  font-size: 22px;
+}
+.footer-logo img{
+  display: block;
+  height: 40px;
+  width: auto;
+}
+.footer-legal{
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.footer-legal .divider{
+  color: #666;
+}
+
+@media(max-width: 800px){
+  .footer-inner{
+    flex-direction: column;
+    text-align: center;
+    gap: .75rem;
+  }
+  .footer-logo{ order: 1; }
+  .footer-social{ order: 2; }
+  .footer-legal{ order: 3; justify-content: center; }
+  /* Ensure footer is visible above fixed bottom sidebar */
+  .site-footer{ 
+    grid-column: 1; 
+    padding-bottom: 80px; 
   }
 }
