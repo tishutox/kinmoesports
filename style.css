@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Zen+Dots&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Reggae+One&display=swap');
 :root{
   --base-clr: #ffffff;
   --line-clr: #e0e0e0;
@@ -52,7 +52,7 @@ body{
   justify-content: flex-end;
   margin-bottom: 16px;
   .logo{
-    font-family: 'Zen Dots', cursive;
+    font-family: 'Reggae One', cursive;
     font-weight: 600;
   }
 }
