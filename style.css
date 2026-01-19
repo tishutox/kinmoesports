@@ -187,6 +187,25 @@ main p{
   h2, p { margin-top: 1em }
 }
 
+.container.video-hero {
+  border: none;
+  border-radius: 1em;
+  margin-bottom: 20px;
+  padding: 0;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.container.video-hero video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 @media(max-width: 800px){
   body{
     grid-template-columns: 1fr;
@@ -197,6 +216,10 @@ main p{
   .container{
     border: none;
     padding: 0;
+  }
+  .container.video-hero {
+    min-height: 250px;
+    margin-bottom: 20px;
   }
   #sidebar{
     height: 60px;
