@@ -284,9 +284,9 @@ main p{
 }
 
 .hero-btn-primary:hover {
-  background-color: #b80500;
-  border-color: #b80500;
-  color: var(--text-clr) !important;
+  background-color: #b8793d;
+  border-color: #b8793d;
+  color: #ffffff !important;
 }
 
 .hero-btn-secondary {
