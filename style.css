@@ -284,6 +284,7 @@ main p{
 .hero-btn-primary:hover {
   background-color: #b80500;
   border-color: #b80500;
+  color: var(--text-clr) !important;
 }
 
 .hero-btn-secondary {
@@ -293,7 +294,7 @@ main p{
 }
 
 .hero-btn-secondary:hover {
-  border-color: var(--accent-clr);
+  border-color: var(--line-clr);
   color: var(--accent-clr);
 }
 
