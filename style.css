@@ -269,7 +269,9 @@ main p{
   font-weight: 600;
   transition: all 200ms ease;
   cursor: pointer;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: none;
   text-align: center;
   word-wrap: break-word;
