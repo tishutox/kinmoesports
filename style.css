@@ -523,6 +523,9 @@ main p{
 .footer-social a[aria-label="Steam"]:hover i{
   color: #1b2838;
 }
+.footer-social a[aria-label="GitHub"]:hover i{
+  color: #101411;
+}
 .footer-logo{
   justify-content: center;
 }
