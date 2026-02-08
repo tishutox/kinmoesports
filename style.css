@@ -520,13 +520,19 @@ main p{
       background-color: var(--hover-clr);
       border-top: 1px solid var(--line-clr);
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
+      overflow: hidden;
 
       > div{
+        display: flex;
         overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        width: 100%;
       }
       li{
         display: inline-flex;
+        flex-shrink: 0;
       }
       a{
         box-sizing: border-box;
