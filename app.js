@@ -51,12 +51,16 @@ function toggleSubMenu(button){
   if(isMobile && isTeamsBtn){
     const currentPage = getCurrentPageName()
     const currentTeamLink = sidebar.querySelector(`.sub-menu a[href="${currentPage}"]`)
+    const teamPages = ['cs2.html', 'ow.html', 'mr.html']
+    const isTeamPage = teamPages.includes(currentPage)
 
     if(isOpen){
       button.classList.remove('active')
       if(currentTeamLink) currentTeamLink.classList.add('active')
     } else {
-      button.classList.add('active')
+      if(isTeamPage){
+        button.classList.add('active')
+      }
       if(currentTeamLink) currentTeamLink.classList.remove('active')
     }
   }
