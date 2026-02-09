@@ -51,7 +51,7 @@ function toggleSubMenu(button){
   if(isMobile && isTeamsBtn){
     const currentPage = getCurrentPageName()
     const currentTeamLink = sidebar.querySelector(`.sub-menu a[href="${currentPage}"]`)
-    const teamPages = ['cs2.html', 'ow.html', 'mr.html']
+    const teamPages = ['cs2.html', 'ow.html', 'mr.html', 'lol.html']
     const isTeamPage = teamPages.includes(currentPage)
 
     if(isOpen){
@@ -129,7 +129,7 @@ function getCurrentPageName(){
 function setTeamActiveState(){
   const teamsBtn = Array.from(sidebar.querySelectorAll('.dropdown-btn')).find(btn => btn.querySelector('span')?.textContent.trim() === 'Teams')
   const currentPage = getCurrentPageName()
-  const teamPages = ['cs2.html', 'ow.html', 'mr.html']
+  const teamPages = ['cs2.html', 'ow.html', 'mr.html', 'lol.html']
   const isMobile = window.innerWidth <= 800
 
   if(!teamPages.includes(currentPage)) return
