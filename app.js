@@ -51,7 +51,7 @@ function toggleSubMenu(button){
   if(isMobile && isTeamsBtn){
     const currentPage = getCurrentPageName()
     const currentTeamLink = sidebar.querySelector(`.sub-menu a[href="${currentPage}"]`)
-    const teamPages = ['cs2.html', 'ow.html', 'mr.html', 'lol.html']
+    const teamPages = ['cs2.html', 'lol.html', 'mtg.html', 'mr.html', 'rl.html']
     const isTeamPage = teamPages.includes(currentPage)
 
     if(isOpen){
@@ -125,14 +125,17 @@ function getCurrentPageName(){
   return lastSegment || 'index.html'
 }
 
-// Set Team page active state (CS2, OW, MR) based on current page
+// Set Team page active state (CS2, LoL, MTG, MR, RL) based on current page
 function setTeamActiveState(){
   const teamsBtn = Array.from(sidebar.querySelectorAll('.dropdown-btn')).find(btn => btn.querySelector('span')?.textContent.trim() === 'Teams')
   const currentPage = getCurrentPageName()
-  const teamPages = ['cs2.html', 'ow.html', 'mr.html', 'lol.html']
+  const teamPages = ['cs2.html', 'lol.html', 'mtg.html', 'mr.html', 'rl.html']
   const isMobile = window.innerWidth <= 800
 
   if(!teamPages.includes(currentPage)) return
+
+  const teamsMenu = teamsBtn?.nextElementSibling
+  teamsMenu?.querySelectorAll('a.active').forEach(link => link.classList.remove('active'))
 
   const currentTeamLink = sidebar.querySelector(`.sub-menu a[href="${currentPage}"]`)
 
@@ -145,7 +148,6 @@ function setTeamActiveState(){
   if(teamsBtn) teamsBtn.classList.add('active')
   if(currentTeamLink) currentTeamLink.classList.add('active')
 
-  const teamsMenu = teamsBtn?.nextElementSibling
   if(teamsMenu && !teamsMenu.classList.contains('show')){
     teamsMenu.classList.add('show')
     teamsBtn.classList.add('rotate')
